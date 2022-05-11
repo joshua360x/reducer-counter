@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import styles from './Counter.css';
 
 const colors = {
@@ -8,6 +8,7 @@ const colors = {
 };
 
 export default function Counter() {
+  // const [state, dispatch] = useReducer(first, second, third)
   const [count, setCount] = useState(0);
   const [currentColor, setCurrentColor] = useState(colors.yellow);
 
