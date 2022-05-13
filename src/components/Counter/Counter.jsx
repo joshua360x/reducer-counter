@@ -31,19 +31,19 @@ export default function Counter() {
 
 
   useEffect(() => {
-    const { count } = intialCount
-    if (count === 0) {
+    
+    if (state.count === 0) {
       setCurrentColor(colors.yellow);
     }
 
-    if (count > 0) {
+    if (state.count > 0) {
       setCurrentColor(colors.green);
     }
 
-    if (count < 0) {
+    if (state.count < 0) {
       setCurrentColor(colors.red);
     }
-  }, [count]);
+  }, [state.count]);
 
   const increment = () => {
     // setCount((prevState) => prevState + 1);
@@ -60,8 +60,8 @@ export default function Counter() {
 
   return (
     <main className={styles.main}>
-      <h3>{state.count}</h3>
-      <h1 style={{ color: currentColor }}>{count}</h1>
+      {/* <h3>{state.count}</h3> */}
+      <h1 style={{ color: currentColor }}>{state.count}</h1>
       <div>
         <button
           type="button"
