@@ -10,30 +10,23 @@ const colors = {
 export default function Counter() {
   // const [count, setCount] = useState(0);
   const [currentColor, setCurrentColor] = useState(colors.yellow);
-  const intialCount = { count: 0 }
-  const [state, dispatch] = useReducer(reducer, intialCount)
-
+  const intialCount = { count: 0 };
+  const [state, dispatch] = useReducer(reducer, intialCount);
 
   function reducer(state, action) {
     switch (action.type) {
       case 'increment':
-        return { count: state.count + 1 }
+        return { count: state.count + 1 };
       case 'decrement':
-        return { count: state.count - 1 }
+        return { count: state.count - 1 };
       case 'reset':
-        return { count: state.count = 0 }
-    
+        return { count: (state.count = 0) };
       default:
         throw new Error();
     }
   }
 
-
-
-
-
   useEffect(() => {
-    
     if (state.count === 0) {
       setCurrentColor(colors.yellow);
     }
@@ -49,17 +42,17 @@ export default function Counter() {
 
   const increment = () => {
     // setCount((prevState) => prevState + 1);
-    dispatch({ type: 'increment' })
+    dispatch({ type: 'increment' });
   };
-  
+
   const decrement = () => {
     // setCount((prevState) => prevState - 1);
-    dispatch({ type: 'decrement' })
+    dispatch({ type: 'decrement' });
   };
-  
+
   const reset = () => {
     // setCount(0);
-    dispatch({ type: 'reset' })
+    dispatch({ type: 'reset' });
   };
 
   return (
