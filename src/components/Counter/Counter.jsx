@@ -20,6 +20,8 @@ export default function Counter() {
         return { count: state.count + 1 }
       case 'decrement':
         return { count: state.count - 1 }
+      case 'reset':
+        return { count: state.count = 0 }
     
       default:
         throw new Error();
@@ -49,13 +51,15 @@ export default function Counter() {
     // setCount((prevState) => prevState + 1);
     dispatch({ type: 'increment' })
   };
-
+  
   const decrement = () => {
-    setCount((prevState) => prevState - 1);
+    // setCount((prevState) => prevState - 1);
+    dispatch({ type: 'decrement' })
   };
-
+  
   const reset = () => {
-    setCount(0);
+    // setCount(0);
+    dispatch({ type: 'reset' })
   };
 
   return (
